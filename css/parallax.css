@@ -1,0 +1,52 @@
+body {
+	margin: 0;
+}
+
+section {
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+
+.sect_1 img {
+	position: absolute;
+}
+
+.header_text {
+	color: #fff;
+	width: 100%;
+	display: inline-block;
+	position: absolute;
+	top:40%;
+	text-align: center;
+}
+
+.header_text p {
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.sect_2 {
+	background-color: #666;
+}
+
+.mirror {
+	visibility: visible;
+    z-index: -100;
+    position: fixed;
+    left: 0px;
+    top: -3.25rem;
+    overflow: hidden;
+    transform: translate3d(0px, 0px, 0px);
+    height: calc(100vh + 3rem);
+    width: 100vw;
+}
+
+.mirror img {
+	width: 100vw;
+	height: auto;
+	position: absolute;
+	left: 0;
+	top: 0;
+	max-width: none;
+}
