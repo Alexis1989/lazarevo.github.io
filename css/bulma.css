@@ -21,10 +21,8 @@
 }
 
 @font-face {
-  font-family: 'a_Assuan';
-  src: url('../fonts/a_Assuan.ttf');
-  font-weight: normal;
-  font-style: normal;
+  font-family: "a_Assuan";
+  src: font-url('../fonts/a_Assuan.ttf') format('truetype');
 }
 
 .logo {
