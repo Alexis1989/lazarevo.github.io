@@ -21,8 +21,12 @@
 }
 
 @font-face {
-  font-family: "a_Assuan";
-  src: font-url('../fonts/a_Assuan.ttf') format('truetype');
+    font-family: 'a_Assuan';
+    font-style: normal;
+    font-weight: 400;
+    src: local('a_Assuan'), local('a_Assuan-Medium'),
+        url(http://allfont.ru/cache/fonts/a_assuan_542a7e75d34754e3943c73f50d028207.woff) format('woff'),
+        url(http://allfont.ru/cache/fonts/a_assuan_542a7e75d34754e3943c73f50d028207.ttf) format('truetype');
 }
 
 .logo {
