@@ -12,7 +12,14 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=cyrillic" rel="stylesheet">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/parallax.js"></script>
+	<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<style type="text/css">
+		#YMapsID {
+		    width: 100%;
+		    height: 95vh;
+		}
 
+	</style>
 	
 </head>
 <body>
@@ -200,8 +207,10 @@
 		    <h3 class="title is-3">Магазины</h3>
 		  </div>
 		</div>
-			  <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A96dd3b23b5fc36a72fe214bde8b662d117b8128ec42edffe3a1bc84291c324b0&amp;width=100%25&amp;height=100vh&amp;lang=ru_RU&amp;"></script>
-
+	</div>
+		    <div class="container">
+		    	<div id="YMapsID">
+		    </div>
 		</div>
 	<footer class="footer">
 	  <div class="container">
@@ -235,5 +244,154 @@
 		</div>
 	  </div>
 	</footer>
+	<script type="text/javascript">
+		ymaps.ready(init);
+
+			function init(){     
+
+			    var myMap = new ymaps.Map("YMapsID", {
+			        center: [54.191966460284256,37.63198526188134],
+			        zoom: 12,
+			        controls: []
+			    });
+
+			    myMap.behaviors.disable('scrollZoom');
+ 
+			    myMap.controls.add("zoomControl", {
+			        position: {top: 15, left: 15}
+			    });
+
+			    var shops = [
+			    				[54.200850089500726, 37.64524466069955], // Марата
+			    			    [54.199211, 37.65328], // Ложевая
+			    			    [54.174591, 37.615577], // Михеева
+			    			    [54.186051, 37.619204], // Центральный рынок
+			    			    [54.17867215774516, 37.63252949999999], // Кауля
+			    			    [54.15755980287482, 37.5821166312828] // Калужское шоссе
+			    			];
+
+			    /*var marata = new ymaps.Placemark([54.200850089500726, 37.64524466069955] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+
+			    marata.events.add('click', function (e) {
+			    	myMap.geoObjects.remove(marata);
+			    	console.log("click");
+			    });
+				
+				var lojevaya = new ymaps.Placemark([54.199211, 37.65328] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+				
+				*/
+
+				for (var i = 0, l = shops.length; i < l; i++) {
+			        myMap.geoObjects.add(new ymaps.Placemark(shops[i], {},
+					        { iconLayout: 'default#image',
+					          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+					          iconImageSize: [30, 40],
+			          		  iconImageOffset: [-20, -47] }	
+			        	)
+			        );
+			    };
+
+			    myMap.geoObjects.events.add('click', function (e) { 
+			    	var coords = e.get('coords');
+    				alert(coords.join(', '));
+			    });
+
+			    /*var mikheeva = new ymaps.Placemark([54.174591, 37.615577] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+
+			    var rynok = new ymaps.Placemark([54.186051, 37.619204] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+
+			    var kaylya = new ymaps.Placemark([54.17867215774516, 37.63252949999999] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+
+			    var kaluga = new ymaps.Placemark([54.15755980287482, 37.5821166312828] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] }); 
+
+			    var lenina30 = new ymaps.Placemark([54.18882973572253, 37.612421308405445] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+
+			    var demidovskaya = new ymaps.Placemark([54.219543857624224, 37.62280049999992] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+
+			    var lenina131 = new ymaps.Placemark([54.15347930370635, 37.58515077116389] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+
+			    var pervomayaskaya = new ymaps.Placemark([54.181881068069245, 37.60227072023767] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+
+			    var ylyanova = new ymaps.Placemark([54.19846026, 37.58197141] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+
+			    var maksimagorkogo = new ymaps.Placemark([54.21355078, 37.61069150] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+
+			    var kytyzova = new ymaps.Placemark([54.20837, 37.672729] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+
+			    var metall = new ymaps.Placemark([54.188952, 37.690698] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+
+			    var novomoskovsk_s = new ymaps.Placemark([54.158633, 37.636428] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });*/
+
+			    var may = new ymaps.Placemark([54.16535, 37.582357] , {},
+			        { iconLayout: 'default#image',
+			          iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+			          iconImageSize: [30, 40],
+			          iconImageOffset: [-20, -47] });
+
+			    /* .add(marata).add(lojevaya) */
+			 
+			    myMap.geoObjects.add(may);
+			}
+	</script>
 </body>
 </html>
