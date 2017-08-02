@@ -127,8 +127,7 @@
   cursor: pointer;
   border-width: 5px 5px 0 0;
   border-style: solid;
-  border-color: #fafafa;
-  opacity: 0.35;
+  border-color: #fff;
   outline: 0;
   z-index: 3;
 }
@@ -226,14 +225,16 @@
   overflow: hidden;
 }
 .carousel__slide h1 {
-  font-size: 50px;
-  line-height: 50px;
+  font-size: 2.5rem;
+  line-height: 2rem;
   color: #fafafa;
   position: absolute;
-  top: 50%;
   width: 100%;
   text-align: center;
   margin-top: -25px;
+  padding: 40px 0 80px 0;
+  bottom: 0;
+  background-color: rgba(0,0,0, .3);
 }
 .carousel__slide h2,
 h3 {
@@ -293,5 +294,12 @@ h3 {
   }
   to {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .carousel__slide h1 {
+    font-size: 1.4rem;
+    top: 40%;
   }
 }
