@@ -1,13 +1,82 @@
 ymaps.ready(init);
 
-function init(){ 
-	var currentClickLabel = -1;
+var curr_click_item = null;
+var myMap = null;
+var objectManager = null;
+var last_click_label = -1;
 
-    var myMap = new ymaps.Map("YMapsID", {
-        center: [54.191966460284256,37.63198526188134],
-        zoom: 12,
-        controls: []
-    });
+$( document ).ready(function() {
+
+	$(".view-region > a" ).click(function() {
+		$(".tula").css("display", "none");
+		$(".region").css("display", "block");
+
+		$(".view-region").addClass("is-active");
+		$(".view-tula").removeClass("is-active");
+
+		myMap.setCenter([54.27806562134709, 37.34628936910047]);
+		myMap.setZoom(9);
+		objectManager.setFilter('id > 15');
+	});
+
+	$(".view-tula > a" ).click(function() {
+		$(".region").css("display", "none");
+		$(".tula").css("display", "block");
+
+		$(".view-tula").addClass("is-active");
+		$(".view-region").removeClass("is-active");
+
+		$(".tula a").removeClass("is-active");
+
+		myMap.setCenter([54.191966460284256,37.63198526188134]);
+		myMap.setZoom(12);
+		objectManager.setFilter('id < 15');
+	});
+
+    $(".store" ).click(function() {
+    	if(curr_click_item != null) {
+    		curr_click_item.removeClass("is-active");
+    	}
+
+    	curr_click_item = $(this);
+
+
+    	$(this).addClass("is-active");
+    	var data_coordinate_x = $(this).data("x");
+    	var data_coordinate_y = $(this).data("y");
+    	var objectId = $(this).attr("id");
+
+    	//$(".ymaps-2-1-53-map").remove();
+
+    	console.log(data_coordinate_x);
+    	console.log(data_coordinate_y);
+    	console.log(objectId);
+
+    	myMap.setCenter([data_coordinate_x, data_coordinate_y]);
+    	myMap.setZoom(14);
+
+    	if(last_click_label > -1){
+	      objectManager.objects.setObjectOptions(last_click_label, {
+		    iconImageSize: [30, 40]
+		  });
+	    };
+
+	    last_click_label = objectId;
+
+    	objectManager.objects.setObjectOptions(objectId, {
+		    iconImageSize: [40, 50]
+		  });
+	});
+});
+
+function init(){ 
+	if(myMap == null) {
+		myMap = new ymaps.Map("YMapsID", {
+	        center: [54.191966460284256,37.63198526188134],
+	        zoom: 12,
+	        controls: []
+	    });
+	};
 
     myMap.behaviors.disable('scrollZoom');
 
@@ -15,7 +84,7 @@ function init(){
         position: {top: 15, left: 15}
     });
 
-    var objectManager = new ymaps.ObjectManager({
+    objectManager = new ymaps.ObjectManager({
 	    // Включаем кластеризацию.
 	    clusterize: false,
 	    // Опции кластеров задаются с префиксом 'cluster'.
@@ -69,7 +138,6 @@ function init(){
     			    [54.022367, 37.500576], // г. Щекино Емельянова 
     			    [54.165618, 37.468655], // п. Иншинский
     			    [53.703009, 37.280359] // г. Плавск
-
     			];
 
     for (var i = 0, l = tula_shops.length; i < l; i++) {
@@ -94,28 +162,43 @@ function init(){
 		});
     };
 
+    objectManager.setFilter('id < 16');
+
     objectManager.objects.events.add('click', function (e) {
 	    var objectId = e.get('objectId');
-	    var coords = e.get('coords');
-	    var curr = objectManager.getObjectState(objectId);
-	    console.log(curr);
-	    console.log(objectId);
-	    if(currentClickLabel > -1){
-	      objectManager.objects.setObjectOptions(currentClickLabel, {
+
+	    // SCROLL
+	    if(objectId > 15) {
+	    	$(".menu").animate({scrollTop:117*(objectId - 16)}, 1000,'swing');
+	    } else {
+	    	$(".menu").animate({scrollTop:117*objectId}, 1000,'swing');
+	    }
+	    
+	    $("#" + objectId).addClass("is-active");
+	    var data_coordinate_x = $("#" + objectId).data("x");
+    	var data_coordinate_y = $("#" + objectId).data("y");
+
+	    if(curr_click_item != null) {
+    		curr_click_item.removeClass("is-active");
+    	}
+
+    	curr_click_item = $("#" + objectId);
+
+	    if(last_click_label > -1){
+	      objectManager.objects.setObjectOptions(last_click_label, {
 		    iconImageSize: [30, 40]
 		  });
 	    };
 
+	    last_click_label = objectId;
+
+	    myMap.setZoom(13);
+	    myMap.setCenter(objectManager.objects.getById(objectId).geometry.coordinates);
+	    myMap.setZoom(14);
+
 	    objectManager.objects.setObjectOptions(objectId, {
 		    iconImageSize: [40, 50]
 		});
-
-	    currentClickLabel = objectId;
-
-	    //hideLabelsTula();
-	    myMap.setZoom(12);
-	    myMap.setCenter(coords);
-	    
 	});
 
 	function hideLabelsTula() {

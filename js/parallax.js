@@ -20,8 +20,8 @@ $(window).resize(function() {
 
   var centr = (img_width - width) / 2;
 
-  if (relation > 0.75) {
-    $(".mirror img").css("width", "auto").css("height", "100vh").css("left", "-" + centr +"px");
+  if (relation > 0.6) {
+    $(".mirror img").css("width", "auto").css("height", "calc(100vh + 3.25rem)").css("left", "-" + centr +"px");
   } else {
     $(".mirror img").css("height", "auto").css("width", "100vw").css("left", "0px");;
   };
@@ -33,7 +33,7 @@ $(document).ready(function(){
         var width = $(window).width();
         var height = $(window).height();
 
-        console.log("width = " + width + "; height = " + height);
+        console.log("1width = " + width + "; height = " + height);
 
         var relation = height / width;
 
@@ -41,8 +41,8 @@ $(document).ready(function(){
 
         var centr = (img_width - width) / 2;
 
-        if (relation > 0.75) {
-          $(".mirror img").css("width", "auto").css("height", "100vh").css("left", "-" + centr +"px");
+        if (relation > 0.6) {
+          $(".mirror img").css("width", "auto").css("height", "calc(100vh + 3.25rem)").css("left", "-" + centr +"px");
         } else {
           $(".mirror img").css("height", "auto").css("width", "100vw").css("left", "0px");;
         };
