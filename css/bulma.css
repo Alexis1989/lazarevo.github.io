@@ -4915,6 +4915,14 @@ a.navbar-item:hover, a.navbar-item.is-active,
 }
 
 @media screen and (max-width: 1077px) {
+  .mobile-fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1048;
+  }
+
   .navbar-brand .navbar-item {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -8132,6 +8140,13 @@ label.panel-block:hover {
 }
 
 @media screen and (max-width: 360px) {
+  .shield {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    z-index: 1000;
+  }
+
   .title.is-1 {
     font-size: 2rem;
   }

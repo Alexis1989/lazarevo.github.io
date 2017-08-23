@@ -79,7 +79,7 @@ $( document ).ready(function() {
     	console.log(objectId);
 
     	myMap.setCenter([data_coordinate_x, data_coordinate_y]);
-    	myMap.setZoom(14);
+    	myMap.setZoom(16);
 
     	if(last_click_label > -1){
 	      objectManager.objects.setObjectOptions(last_click_label, {
@@ -104,6 +104,8 @@ function init(){
 	    });
 	};
 
+
+	//myMap.behaviors.disable('drag');
     myMap.behaviors.disable('scrollZoom');
 
     myMap.controls.add("zoomControl", {
@@ -218,9 +220,9 @@ function init(){
 
 	    last_click_label = objectId;
 
-	    myMap.setZoom(13);
+	    myMap.setZoom(15);
 	    myMap.setCenter(objectManager.objects.getById(objectId).geometry.coordinates);
-	    myMap.setZoom(14);
+	    myMap.setZoom(16);
 
 	    objectManager.objects.setObjectOptions(objectId, {
 		    iconImageSize: [40, 50]
