@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=cyrillic" rel="stylesheet">
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/parallax.js"></script>
+	<!-- <script type="text/javascript" src="js/parallax.js"></script> -->
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 	<script type="text/javascript" src="js/map.js"></script>
 	<style type="text/css">
@@ -29,7 +29,7 @@
 	      <div class="logo">ЛАЗАРЕВСКОЕ</div>
 	    </a>
 
-	    <div class="navbar-burger" data-target="navMenu">
+	    <div class="navbar-burger nav-toggle" for="nav-toggle-state">
 	      <span></span>
 	      <span></span>
 	      <span></span>
@@ -62,9 +62,9 @@
 		</div>
 	
 	</nav>
-	<div class="mirror">
+	<!-- <div class="mirror">
 		<img src="images/header_banner.jpg">
-	</div>
+	</div> -->
 	<section class="sect_1">
 		<div class="header_text">
 			<h1 class="title is-1" style="color: #fff;">Племенное хозяйство «Лазаревское»</h1>
@@ -90,7 +90,7 @@
 			    	</div>
 			    </div>
 			  </div>
-			  <div class="column count-item item-1">
+			  <div class="column count-item item-3">
 			    <div class="count-div">
 			    	<div>
 			    		<h1 class="title is-1">55 000</h1>
@@ -211,11 +211,13 @@
 	    <div class="columns">
 	    	<div class="column is-12">
 		    	<div id="YMapsID">
+
 		    		<div class="adress">
 			    <div class="tabs">
 				  <ul>
 				    <li class="is-active view-tula"><a class="">Тула</a></li>
 				    <li class="view-region"><a>Тульская область</a></li>
+				    <div><a class="hidden_adress is-show" style="padding: 12px; position: absolute; top: 0; right: 0;"><i class="fa fa-chevron-up"></i></a></div>
 				  </ul>
 				</div>
 				<aside class="menu" style="overflow-y: scroll; height: calc(100vh - 143px); display: block;">

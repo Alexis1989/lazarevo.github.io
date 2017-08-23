@@ -7,6 +7,32 @@ var last_click_label = -1;
 
 $( document ).ready(function() {
 
+	var height_menu = $('.adress').height();
+    $('.hidden_adress').click(function () {
+        if($(this).hasClass('is-show')) {
+        	$('.adress').css("overflow-y", "hidden");
+            $('.adress').animate({
+			     height : 40
+			});
+            $(this).removeClass('is-show');
+
+            $('.hidden_adress > i').removeClass("fa-chevron-up").addClass("fa-chevron-down");
+        } else {
+        	$('.adress').css("overflow-y", "hidden");
+            $('.adress').animate({ height : height_menu }, 
+				{ 
+					done: function() { 
+						$('.adress').css("height", "calc(100vh - 100px)");
+					}
+			  	}
+		    );
+
+    		
+			$(this).addClass('is-show');
+			$('.hidden_adress > i').removeClass("fa-chevron-down").addClass("fa-chevron-up");
+        }; 
+    });
+
 	$(".view-region > a" ).click(function() {
 		$(".tula").css("display", "none");
 		$(".region").css("display", "block");
