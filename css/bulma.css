@@ -29,6 +29,15 @@
         url(../fonts/a_assuan_542a7e75d34754e3943c73f50d028207.ttf) format('truetype');
 }
 
+.center {
+  text-align: center;
+}
+
+.article p {
+  font-family: "Roboto Slab";
+  margin: 20px 0;
+}
+
 .logo {
   font-family: 'a_Assuan', arial;
   font-size: 2rem;
@@ -4923,6 +4932,10 @@ a.navbar-item:hover, a.navbar-item.is-active,
     z-index: 1048;
   }
 
+  body {
+    margin-top: 3.25rem;
+  }
+
   .navbar-brand .navbar-item {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -5678,6 +5691,7 @@ label.panel-block:hover {
   -ms-flex-negative: 1;
       flex-shrink: 1;
   padding: 0.75rem;
+  margin: 0.75rem;
 }
 
 .columns.is-mobile > .column.is-narrow {
