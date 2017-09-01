@@ -3356,7 +3356,6 @@ input[type="submit"].button {
 }
 
 .title.is-6 {
-  color: #9B9B9B;
   font-size: 1rem;
 }
 
@@ -8236,8 +8235,12 @@ label.panel-block:hover {
   font-weight: 500;
 }
 
-.news {
+.news > .title.is-4, .button {
   margin-bottom: 1.5rem;
+}
+
+.news > .title.is-6 {
+  color: #9B9B9B;
 }
 
 .item-1 {
