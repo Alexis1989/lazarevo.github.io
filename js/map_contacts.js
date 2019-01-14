@@ -1,6 +1,6 @@
 ymaps.ready(init);
 
-function init(){ 
+function init(){
 	var	myMap = new ymaps.Map("YMapsID", {
 	        center: [53.86160359323152,37.46494337134814],
 	        zoom: 12,
@@ -31,12 +31,12 @@ function init(){
 	});
 	objectManager.objects.options.set('preset', 'islands#grayIcon');
 
-	objectManager.objects.options.set( 
+	objectManager.objects.options.set(
 	{
-		iconLayout: 'default#image',        
+		iconLayout: 'default#image',
 		iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
      	iconImageSize: [30, 40],
-		  	iconImageOffset: [-20, -47] 
+		  	iconImageOffset: [-20, -47]
     });
 
 	myMap.geoObjects.add(objectManager);

@@ -1,11 +1,12 @@
 ymaps.ready(init);
+ymaps.ready(init2);
 
 var curr_click_item = null;
 var myMap = null;
 var objectManager = null;
 var last_click_label = -1;
 
-$( document ).ready(function() {
+$(document).ready(function() {
 
 	var height_menu = $('.adress').height();
     $('.hidden_adress').click(function () {
@@ -19,18 +20,18 @@ $( document ).ready(function() {
             $('.hidden_adress > i').removeClass("fa-chevron-up").addClass("fa-chevron-down");
         } else {
         	$('.adress').css("overflow-y", "hidden");
-            $('.adress').animate({ height : height_menu }, 
-				{ 
-					done: function() { 
+            $('.adress').animate({ height : height_menu },
+				{
+					done: function() {
 						$('.adress').css("height", "calc(100vh - 100px)");
 					}
 			  	}
 		    );
 
-    		
+
 			$(this).addClass('is-show');
 			$('.hidden_adress > i').removeClass("fa-chevron-down").addClass("fa-chevron-up");
-        }; 
+        };
     });
 
 	$(".view-region > a" ).click(function() {
@@ -74,10 +75,6 @@ $( document ).ready(function() {
 
     	//$(".ymaps-2-1-53-map").remove();
 
-    	console.log(data_coordinate_x);
-    	console.log(data_coordinate_y);
-    	console.log(objectId);
-
     	myMap.setCenter([data_coordinate_x, data_coordinate_y]);
     	myMap.setZoom(16);
 
@@ -95,7 +92,7 @@ $( document ).ready(function() {
 	});
 });
 
-function init(){ 
+function init(){
 	if(myMap == null) {
 		myMap = new ymaps.Map("YMapsID", {
 	        center: [54.191966460284256,37.63198526188134],
@@ -128,12 +125,12 @@ function init(){
 	});
 	objectManager.objects.options.set('preset', 'islands#grayIcon');
 
-	objectManager.objects.options.set( 
+	objectManager.objects.options.set(
 	{
-		iconLayout: 'default#image',        
+		iconLayout: 'default#image',
 		iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
      	iconImageSize: [30, 40],
-		  	iconImageOffset: [-20, -47] 
+		  	iconImageOffset: [-20, -47]
     });
 
 	var currentId = 0;
@@ -163,7 +160,7 @@ function init(){
     				[54.008186, 37.518505], // г. Щекино Ленина
     			    [54.734204, 37.397279], // п. Заокский
     			    [53.851336, 37.486176], // п. Лазарево
-    			    [54.022367, 37.500576], // г. Щекино Емельянова 
+    			    [54.022367, 37.500576], // г. Щекино Емельянова
     			    [54.165618, 37.468655], // п. Иншинский
     			    [53.703009, 37.280359] // г. Плавск
     			];
@@ -201,7 +198,7 @@ function init(){
 	    } else {
 	    	$(".menu").animate({scrollTop:117*objectId}, 1000,'swing');
 	    }
-	    
+
 	    $("#" + objectId).addClass("is-active");
 	    var data_coordinate_x = $("#" + objectId).data("x");
     	var data_coordinate_y = $("#" + objectId).data("y");
@@ -234,4 +231,55 @@ function init(){
 		objectManager.setFilter('id > 15');
 		myMap.setZoom(9);
 	};
+};
+
+function init2(){
+		let myMap = new ymaps.Map("YMapsID2", {
+	        center: [53.86191064937625,37.46387308692406],
+	        zoom: 9,
+	        controls: []
+	    });
+
+
+	//myMap.behaviors.disable('drag');
+    myMap.behaviors.disable('scrollZoom');
+
+    myMap.controls.add("zoomControl", {
+        position: {top: 15, left: 15}
+    });
+
+    let objectManager = new ymaps.ObjectManager({
+	    // Включаем кластеризацию.
+	    clusterize: false,
+	    // Опции кластеров задаются с префиксом 'cluster'.
+	    clusterHasBalloon: false,
+	    // Опции геообъектов задаются с префиксом 'geoObject'.
+	    geoObjectOpenBalloonOnClick: false
+	});
+
+	// Опции можно задавать напрямую в дочерние коллекции.
+	objectManager.clusters.options.set({
+	    preset: 'islands#grayClusterIcons',
+	    hintContentLayout: ymaps.templateLayoutFactory.createClass('Группа объектов')
+	});
+	objectManager.objects.options.set('preset', 'islands#grayIcon');
+
+	objectManager.objects.options.set(
+	{
+		iconLayout: 'default#image',
+		iconImageHref: 'http://blog.karmanov.ws/files/APIYaMaps1/min_marker.png',
+     	iconImageSize: [30, 40],
+		  	iconImageOffset: [-20, -47]
+    });
+
+	myMap.geoObjects.add(objectManager);
+
+	objectManager.add({
+		type: 'Feature',
+		id: 99,
+		geometry: {
+				type: 'Point',
+				coordinates: [53.86191064937625,37.46387308692406]
+		}
+	});
 };

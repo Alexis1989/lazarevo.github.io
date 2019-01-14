@@ -1,210 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Племенное хозяйство «Лазаревское». Крупнейшее сельскохозяйственное предприятие Тульской области</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="stylesheet" type="text/css" href="css/parallax.css">
-	<link rel="stylesheet" type="text/css" href="css/bulma.css">
-	<link rel="stylesheet" type="text/css" href="css/carousel.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;subset=cyrillic" rel="stylesheet">
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<!-- <script type="text/javascript" src="js/parallax.js"></script> -->
-	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-	<script type="text/javascript" src="js/map.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script type="text/javascript" src="js/map.js"></script>
 	<style type="text/css">
 		#YMapsID {
 		    width: 100%;
-		    height: 95vh;
+		    height: calc(100vh - 100px);
+        padding: 15px;
+        position: relative;
 		}
+
+    #YMapsID2 {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      margin: 0;
+		}
+
 	</style>
+  <title>ООО "ПХ "Лазаревское" - одно из крупнейших сельскохозяйственных предприятий Тульской области. Мясоперерабатывающий комбинат, животноводческий комплекс, племенная ферма, собственные сельхозплощади.</title>
 </head>
 <body>
-	<nav class="navbar mobile-fixed">
-		
-		<div class="navbar-brand">
-			<a class="navbar-item" href="index.html">
-			  <div class="logo">ЛАЗАРЕВСКОЕ</div>
-			</a>
+  <nav>
+    <ul class="is-left">
+      <li><a class="logo" href="#">Лазаревское</a></li>
+    </ul>
+    <ul class="is-right">
+      <li><a href="#">О нас</a></li>
+      <li><a href="#">Продукция</a></li>
+      <li><a href="#">Магазины</a></li>
+      <li><a href="#">Вакансии</a></li>
+      <li><a href="#">Видео</a></li>
+      <li><a href="#">События</a></li>
+      <li><a href="#">Отзывы</a></li>
+      <li><a href="#">Контакты</a></li>
+    </ul>
+  </nav>
+  <div class="banner">
+    <video autoplay muted loop id="myVideo">
+      <source src="video/promo.mp4" type="video/mp4">
+    </video>
+    <div class="darken"></div>
+    <h1 class="title">Племенное хозяйство «Лазаревское»</h1>
+    <p>одно из крупных сельскохозяйственных предприятий Тульской области</p>
 
-			<div class="navbar-burger"  data-target="navMenu" for="nav-toggle-state">
-			  <span></span>
-			  <span></span>
-			  <span></span>
-			</div>
-		</div>
-		<div class="navbar-menu" id="navMenu">
-			<div class="navbar-end">
-				<a class="navbar-item" href="products.html">ПРОДУКЦИЯ</a>
-				<a class="navbar-item" href="stores.html">МАГАЗИНЫ</a>
-				<a class="navbar-item" href="events.html">СОБЫТИЯ</a>
-				<a class="navbar-item" href="jobs.html">ВАКАНСИИ</a>
-				<a class="navbar-item" href="videos.html">ВИДЕО</a>
-				<a class="navbar-item" href="about.html">О КОМПАНИИ</a>
-				<a class="navbar-item" href="contacts.html">КОНТАКТЫ</a>
-			</div>
-		</div>
-	</nav>
-	<!-- <div class="mirror">
-		<img src="images/header_banner.jpg">
-	</div> -->
-	<section class="sect_1">
-		<div class="header_text">
-			<h1 class="title is-1" style="color: #fff;">Племенное хозяйство «Лазаревское»</h1>
-	    	<p>крупнейшее сельскохозяйственное предприятие Тульской области</p>
-		</div>
-	</section>
-	<div style="background-color:#fff; padding-top: 0.75rem;">
-		<div class="container">
-			<div class="columns is-desktop">
-			  <div class="column count-item item-1">
-			    <div class="count-div">
-			    	<div>
-			    		<h1 class="title is-1">100 000</h1>
-			    		<span class="title is-6">голов свиней свиноводческого комплекса</span>
-			    	</div>
-			    </div>
-			  </div>
-			  <div class="column count-item item-2">
-			    <div class="count-div">
-			    	<div>
-			    		<h1 class="title is-1">31</h1>
-			    		<span class="title is-6">комбайн и 81 трактор в машино-тракторном парке</span>
-			    	</div>
-			    </div>
-			  </div>
-			  <div class="column count-item item-3">
-			    <div class="count-div">
-			    	<div>
-			    		<h1 class="title is-1">55 000</h1>
-			    		<span class="title is-6">тонн объем комплекса хранения зерна</span>
-			    	</div>
-			    </div>
-			  </div>
-			  <div class="column count-item item-field">
-			    <div class="count-div">
-			    	<div>
-			    		<h1 class="title is-1">23 000</h1>
-			    		<span class="title is-6">гектаров сельскохозяйственных угодий</span>
-			    	</div>
-			    </div>
-			  </div>
-			</div>
-		</div>
-	</div>
-	<div style="width:100%; background-color:#fff;">
-	<div class="container">
-	<div class="columns is-mobile">
-	  <div class="column">
-	    <h3 class="title is-3">Продукция</h3>
-	  </div>
-	  <div class="column is-one-quarters" style="text-align: right;">
-	    <a class="button is-warning"><i class="fa fa-download" style="margin-right: 8px;"></i>  Скачать каталог</a>
-	  </div>
-	</div>
-	</div>
-	</div>
-	<div class="carousel-container">
-  <div class="carousel my-carousel carousel--translate">
-    <input class="carousel__activator" type="radio" name="carousel" id="F" checked="checked"/>
-    <input class="carousel__activator" type="radio" name="carousel" id="G"/>
-    <input class="carousel__activator" type="radio" name="carousel" id="H"/>
-    <input class="carousel__activator" type="radio" name="carousel" id="I"/>
-    <input class="carousel__activator" type="radio" name="carousel" id="J"/>
-    <div class="carousel__controls">
-      <label class="carousel__control carousel__control--backward" for="J"></label>
-      <label class="carousel__control carousel__control--forward" for="G"></label>
-    </div>
-    <div class="carousel__controls">
-      <label class="carousel__control carousel__control--backward" for="F"></label>
-      <label class="carousel__control carousel__control--forward" for="H"></label>
-    </div>
-    <div class="carousel__controls">
-      <label class="carousel__control carousel__control--backward" for="G"></label>
-      <label class="carousel__control carousel__control--forward" for="I"></label>
-    </div>
-    <div class="carousel__controls">
-      <label class="carousel__control carousel__control--backward" for="H"></label>
-      <label class="carousel__control carousel__control--forward" for="J"></label>
-    </div>
-    <div class="carousel__controls">
-      <label class="carousel__control carousel__control--backward" for="I"></label>
-      <label class="carousel__control carousel__control--forward" for="F"></label>
-    </div>
-    <div class="carousel__track">
-      <div class="carousel__slide">
-        <h1><a href="#">Колбаса вареная Чайная</a></h1>
+  </div>
+  <div class="container">
+    <h2>Продукция переработки</h2>
+    <div class="items">
+      <div class="item item-4"><img src="img/product_1.jpg" />
+        <h4>Колбасы варёные</h4>
+        <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
-      <div class="carousel__slide">
-        <h1><a href="#">Колбаса полукопченная Одесская</a></h1>
+      <div class="item item-4">
+        <img src="img/products/milk.jpg" />
+        <h4>Молочная продукция</h4>
+        <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
-      <div class="carousel__slide">
-        <h1><a href="#">Колбаски кабаноси Зальцбург</a></h1>
+      <div class="item item-4"><img src="img/products/subproduct.jpg" />
+        <h4>Субпродукты</h4>
+        <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
-      <div class="carousel__slide">
-        <h1><a href="#">Орех говяжий копчено-вареныи Люкс</a></h1>
-      </div>
-      <div class="carousel__slide">
-        <h1><a href="#">Мякоть говядины на кости</a></h1>
+      <div class="item item-4"><img src="img/products/fabrikat.jpg" />
+        <h4>Полуфабрикаты</h4>
+        <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
     </div>
-    <div class="carousel__indicators">
-      <label class="carousel__indicator" for="F"></label>
-      <label class="carousel__indicator" for="G"></label>
-      <label class="carousel__indicator" for="H"></label>
-      <label class="carousel__indicator" for="I"></label>
-      <label class="carousel__indicator" for="J"></label>
+    <div class="items">
+      <div class="item item-4"><img src="img/products/salo.jpg" />
+        <h4>Сало, шпик</h4>
+        <a href="#" class="btn btn-default-secondary">В каталог</a>
+      </div>
+      <div class="item item-4"><img src="img/products/delikat.jpg" />
+        <h4>Деликатесы</h4>
+        <a href="#" class="btn btn-default-secondary">В каталог</a>
+      </div>
+      <div class="item item-4"><img src="img/products/vetchina.jpg" />
+        <h4>Ветчины</h4>
+        <a href="#" class="btn btn-default-secondary">В каталог</a>
+      </div>
+      <div class="item item-4"><img src="img/products/sardel.jpg" />
+        <h4>Сардельки</h4>
+        <a href="#" class="btn btn-default-secondary">В каталог</a>
+      </div>
+    </div>
+    <div class="items">
+      <div class="item item-4"><img src="img/products/sosi.jpg" />
+        <h4>Сосиски</h4>
+        <a href="#" class="btn btn-default-secondary">В каталог</a>
+      </div>
+      <div class="item item-4"><img src="img/products/krakow.jpg" />
+        <h4>Колбасы полукопченые</h4>
+        <a href="#" class="btn btn-default-secondary">В каталог</a>
+      </div>
+      <div class="item item-4"><img src="img/products/alpen.jpg" />
+        <h4>Колбасы варенокопченые</h4>
+        <a href="#" class="btn btn-default-secondary">В каталог</a>
+      </div>
+      <div class="item item-4">
+      </div>
     </div>
   </div>
-</div>
-	<div class="container">
-	<div class="columns is-mobile">
-	  <div class="column">
-	    <h3 class="title is-3">События</h3>
-	  </div>
-	  <div class="column is-one-quarters" style="text-align: right;">
-	    <a class="button is-warning">Все события <i class="fa fa-chevron-right" style="margin-left: 8px;"></i></a>
-	  </div>
-	</div>
-	</div>
-	<div class="container">
-	<div class="columns is-desktop">
-	  <div class="column news">
-	  	<h6 class="title is-6">12.06.2017</h6>
-	    <h4 class="title is-4"><a href="#">Открытие нового магазина г.Тула, Калужское шоссе, дом 2</a></h4>
-	  </div>
-	  <div class="column news">
-	    <h6 class="title is-6">12.06.2017</h6>
-	    <h4 class="title is-4"><a href="#">ООО «ПХ «Лазаревское» признано лауреатом конкурса «Лучшие товары и услуги Тульской области»</a></h4>
-	  </div>
-	  <div class="column news">
-	    <h6 class="title is-6">12.06.2017</h6>
-	    <h4 class="title is-4"><a href="#">Врио губернатора Тульской области Алексей Дюмин посетил ООО ПХ «Лазаревское»</a></h4>
-	  </div>
-	</div>
-	</div>
-	<div class="container">
-		<div class="columns is-mobile">
-		  <div class="column">
-		    <h3 class="title is-3">Магазины</h3>
-		  </div>
-		</div>
-	</div>
-	<div class="container">
-
-		    	<div id="YMapsID">
-		    		<div class="shield"></div>
-		    		<div class="adress">
+  <div class="container">
+    <div class="items">
+      <div class="item item-4"><img src="img/pig.jpg" />
+        <h4>Свиньи живым весом</h4>
+        <a href="#" class="btn btn-default-secondary">Подробнее</a>
+      </div>
+      <div class="item item-4"><img src="img/grain.jpg" />
+        <h4>Зерно</h4>
+        <a href="#" class="btn btn-default-secondary">Подробнее</a>
+      </div>
+      <div class="item item-4"><img src="img/potatoes.jpg" />
+        <h4>Картофель</h4>
+        <a href="#" class="btn btn-default-secondary">Подробнее</a>
+      </div>
+      <div class="item item-4"><img src="img/product_4.jpg" />
+        <h4>Полутуши</h4>
+        <a href="#" class="btn btn-default-secondary">Подробнее</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h2>События</h2>
+    <div class="items">
+      <div class="item item-5 news">
+        <span>03.12.2018</span>
+        <h4>ООО "ПХ "Лазаревское" получило премию «Тульский бренд-2018»</h4>
+        <p>
+          Голосование за «Тульский бренд - 2018» проводилось на городском портале Центр71, куда было прислано более 4000 заполненных электронных анкет...
+        </p>
+        <a href="#" class="btn btn-default-secondary">Подробнее</a>
+      </div>
+      <div class="item item-5 news">
+        <span>15.09.2018</span>
+        <h4>Алексей Дюмин поздравил жителей Лазарева с юбилеем поселка</h4>
+        <p>
+          На торжественном открытии праздника выступил заместитель председателя правительства – министр сельского хозяйства Тульской области Дмитрий...
+        </p>
+        <a href="#" class="btn btn-default-secondary">Подробнее</a>
+      </div>
+      <div class="item item-5 news">
+        <span>21.08.2018</span>
+        <h4>ООО «ПХ «Лазаревское» приняло участие в фестивале «СВОЁ»</h4>
+        <p>
+          ООО «ПХ «Лазаревское» приняло участие в фестивале «СВОЁ», который проводился при поддержке Министерства сельского хозяйства Тульской области и Россельхоз...
+        </p>
+        <a href="#" class="btn btn-default-secondary">Подробнее</a>
+      </div>
+      <div class="item item-5 news">
+        <span>19.12.2017</span>
+        <h4>Лауреатом регионального этапа конкурса «100 лучших товаров России» стало ООО "ПХ "Лазаревское"</h4>
+        <p>
+          ООО "ПХ "Лазаревское" включено в список предприятий лауреатов регионального этапа выставки-конкурса «100 лучших товаров России» 2017 г.
+        </p>
+        <a href="#" class="btn btn-default-secondary">Подробнее</a>
+      </div>
+      <div class="item item-5 news">
+        <span>04.12.2017</span>
+        <h4>ООО "ПХ "Лазаревское" получило премию «Тульский бренд-2018»</h4>
+        <p>
+          Голосование за «Тульский бренд - 2018» проводилось на городском портале Центр71, куда было прислано более 4000 заполненных...
+        </p>
+        <a href="#" class="btn btn-default-secondary">Подробнее</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h2>Магазины</h2>
+    	<div id="YMapsID">
+    		<div class="shield"></div>
+    		<div class="adress">
 			    <div class="tabs">
-				  <ul>
-				    <li class="is-active view-tula"><a class="">Тула</a></li>
-				    <li class="view-region"><a>Тульская область</a></li>
-				    <div><a class="hidden_adress is-show" style="padding: 12px; position: absolute; top: 0; right: 0;"><i class="fa fa-chevron-up"></i></a></div>
-				  </ul>
-				</div>
-				<aside class="menu" style="overflow-y: scroll; height: calc(100vh - 143px); display: block;">
+  				  <ul>
+  				    <li class="is-active view-tula"><a class="">Тула</a></li>
+  				    <li class="view-region"><a>Тульская область</a></li>
+  				  </ul>
+  				</div>
+				<aside class="menu">
 				  <ul class="menu-list tula">
 				    <li>
 				    	<a id="0" class="store" data-x="54.200850089500726" data-y="37.64524466069955">
@@ -217,7 +199,7 @@
 						<a id="1" class="store" data-x="54.199211" data-y="37.65328">
 							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>ул.Ложевая, д.133</div>
 					    	<div><i class="fa fa-phone fa-lg" style="margin-right: 8px;"></i>+7 (953) 960-52-99</div>
-					    	<div><i class="fa fa-clock-o fa-lg" style="margin-right: 8px;"></i>09:00 - 20:00</div>	
+					    	<div><i class="fa fa-clock-o fa-lg" style="margin-right: 8px;"></i>09:00 - 20:00</div>
 						</a>
 					</li>
 					<li>
@@ -295,7 +277,7 @@
 							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>ул.Кутузова. д.33</div>
 					    	<div><i class="fa fa-phone fa-lg" style="margin-right: 8px;"></i>+7 (953) 960-52-99</div>
 					    	<div><i class="fa fa-clock-o fa-lg" style="margin-right: 8px;"></i>09:00 - 20:00</div>
-							
+
 						</a>
 					</li>
 					<li>
@@ -303,7 +285,7 @@
 							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>ул.Металлургов, д.43б</div>
 					    	<div><i class="fa fa-phone fa-lg" style="margin-right: 8px;"></i>+7 (953) 960-52-99</div>
 					    	<div><i class="fa fa-clock-o fa-lg" style="margin-right: 8px;"></i>09:00 - 20:00</div>
-							
+
 						</a>
 					</li>
 					<li>
@@ -311,7 +293,7 @@
 							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>ул.Новомосковское шоссе, д.54</div>
 					    	<div><i class="fa fa-phone fa-lg" style="margin-right: 8px;"></i>+7 (953) 960-52-99</div>
 					    	<div><i class="fa fa-clock-o fa-lg" style="margin-right: 8px;"></i>09:00 - 20:00</div>
-							
+
 						</a>
 					</li>
 					<li>
@@ -325,21 +307,21 @@
 				<ul class="menu-list region" style="display:none;">
 					<li>
 						<a id="16" class="store" data-x="54.008186" data-y="37.518505">
-							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>Тульская область, г. Щекино, ул. Ленина, д.36 «Б»</div>
+							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>г. Щекино, ул. Ленина, д.36 «Б»</div>
 					    	<div><i class="fa fa-phone fa-lg" style="margin-right: 8px;"></i>+7 (953) 960-52-99</div>
 					    	<div><i class="fa fa-clock-o fa-lg" style="margin-right: 8px;"></i>09:00 - 20:00</div>
 						</a>
 					</li>
 					<li>
 						<a id="17" class="store" data-x="54.734204" data-y="37.397279">
-							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>Тульская область, п. Заокский, ул. Ленина, д.43 «В»</div>
+							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>п. Заокский, ул. Ленина, д.43 «В»</div>
 					    	<div><i class="fa fa-phone fa-lg" style="margin-right: 8px;"></i>+7 (953) 960-52-99</div>
 					    	<div><i class="fa fa-clock-o fa-lg" style="margin-right: 8px;"></i>09:00 - 20:00</div>
 						</a>
 					</li>
 					<li>
 						<a id="18" class="store" data-x="53.851336" data-y="37.486176">
-							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>Тульская область, Щекинский район, п. Лазарево, ул. Тульская старая, д.10</div>
+							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>Щекинский район, п. Лазарево, ул. Тульская старая, д.10</div>
 					    	<div><i class="fa fa-phone fa-lg" style="margin-right: 8px;"></i>+7 (953) 960-52-99</div>
 					    	<div><i class="fa fa-clock-o fa-lg" style="margin-right: 8px;"></i>09:00 - 20:00</div>
 						</a>
@@ -353,84 +335,147 @@
 					</li>
 					<li>
 						<a id="20" class="store" data-x="54.165618" data-y="37.468655">
-							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>Тульская область, п. Иншинский</div>
+							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>п. Иншинский</div>
 					    	<div><i class="fa fa-phone fa-lg" style="margin-right: 8px;"></i>+7 (953) 960-52-99</div>
 					    	<div><i class="fa fa-clock-o fa-lg" style="margin-right: 8px;"></i>09:00 - 20:00</div>
 						</a>
 					</li>
 					<li>
 						<a id="21" class="store" data-x="53.703009" data-y="37.280359">
-							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>Тульская область, г. Новомосковск, ул. Московская д.23а</div>
+							<div><i class="fa fa-map-marker fa-lg" style="margin-right: 8px;"></i>г. Новомосковск, ул. Московская д.23а</div>
 					    	<div><i class="fa fa-phone fa-lg" style="margin-right: 8px;"></i>+7 (953) 960-52-99</div>
 					    	<div><i class="fa fa-clock-o fa-lg" style="margin-right: 8px;"></i>09:00 - 20:00</div>
 						</a>
 						</li>
 				  </ul>
 				</aside>
-
-		    </div>
-		    
-	    </div>
-	</div>
-	<footer class="footer">
-	  <div class="container">
-	    <div class="columns">
-	    	<div class="column">
-	    		<p><strong>Генеральный директор:</strong></p>
-	    		<p>Романовский</p>
-	    		<p>Фёдор</p>
-	    		<p>Григорьевич</p>
-	    		<p>На основании устава</p>
-	    	</div>
-			<div class="column">
-				<p><strong>БИК</strong> 047003716</p>
-	    		<p><strong>к/с</strong> 30101810700000000716</p>
-	    		<p><strong>Код по ОКПО</strong> 00567209</p>
-	    		<p><strong>Код по ОКВЭД</strong> 01-23</p>
-	    		<p><strong>Код по ОКОНХ</strong> 21220</p>
-			</div>
-			<div class="column">
-				<p><strong>ИНН</strong> 7118503160</p>
-	    		<p><strong>КПП</strong> 711801001</p>
-	    		<p><strong>ОГРН</strong> 1107154005210</p>
-	    		<p><strong>р/с</strong> 40702810900040003387</p>
-	    		<p><strong>Ф-л ГПБ (АО) в г. Туле, г. Тула</strong></p>
-			</div>
-			<div class="column">
-				<p><strong><a href="mailto:info@lazarevo.ru">info@lazarevo.ru</a></strong></p>
-	    		<p>ООО «ПХ «Лазаревское» Россия, 301220, Тульская обл., п. Лазарево, ул. Луговая, д. 1</p>
-	    		<p><strong>+7 (48751) 72-251</strong></p>
-			</div>
 		</div>
-	  </div>
-	</footer>
-	<script type="text/javascript">
-		document.addEventListener('DOMContentLoaded', function () {
+  </div>
+  </div>
+  <div class="container-full">
+    <div class="container">
+      <div class="items">
+        <div class="item item-2">
+          <div class="image-bg"></div>
+        </div>
+        <div class="item-2 full-item">
+          <div class="ps">
+            <div>
+              <h3>Племенное хозяйство Лазаревское</h3>
+            </div>
 
-		  // Get all "navbar-burger" elements
-		  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            <div>
+              <p>Наше убеждение в том, что сегодня получить натуральный экологический продукт возможно исключительно объединив совместные усилия растениеводов, животноводов, переработчиков и торговли. Ведь только так мы имеем возможность перерабатывать то, что производим, и у нас нет необходимости что-то, откуда-то завозить и чем-то заменять.</p>
 
-		  // Check if there are any nav burgers
-		  if ($navbarBurgers.length > 0) {
-
-		    // Add a click event on each of them
-		    $navbarBurgers.forEach(function ($el) {
-		      $el.addEventListener('click', function () {
-
-		        // Get the target from the "data-target" attribute
-		        var target = $el.dataset.target;
-		        var $target = document.getElementById(target);
-
-		        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-		        $el.classList.toggle('is-active');
-		        $target.classList.toggle('is-active');
-
-		      });
-		    });
-		  }
-
-		});
-
-	</script>
+              <p>Цель сотрудников предприятия в том, чтобы натуральный вкус и полезные свойства продуктов, доходили до потребителя в первозданном виде.</p>
+            </div>
+            <div>
+              <p class="author">Основатель предприятия</p>
+              <p class="author">Романовский Федор Григорьевич</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+      <div class="items">
+        <div class="item item-60">
+          <div class="items">
+            <div class="item item-3">
+              <div>БИК 042007855</div>
+              <div>к/с 30101810545250000855</div>
+              <div>Код по ОКПО 00567209</div>
+              <div>Код по ОКВЭД 01-46</div>
+              <div>Код по ОКОНХ 21220</div>
+            </div>
+            <div class="item item-3">
+                <div>ИНН 7118503160</div>
+                <div>КПП 711801001</div>
+                <div>ОГРН 1107154005210</div>
+                <div>р/с 40702810316450007637</div>
+                <div>Ф-л №3652 Банка ВТБ (ПАО) в г. Воронеж</div>
+            </div>
+            <div class="item item-3">
+              <div><a href="#">О нас</a></div>
+              <div><a href="#">События</a></div>
+              <div><a href="#">Вакансии</a></div>
+              <div><a href="#">Видео</a></div>
+              <div><a href="#">Контакты</a></div>
+            </div>
+          </div>
+          <div class="items">
+            <div class="item item-3">
+              <div>Генеральный директор, действующий на основании устава:</div>
+              <div><strong>Гильмуллин Александр Евгеньевич</strong></div>
+            </div>
+            <div class="item item-3">
+              <div>ООО "ПХ "Лазаревское"</div>
+              <div>Россия, 301220, Тульская обл., п. Лазарево, ул. Луговая, д. 1</div>
+              <div><a href="tel:+74875172251">+7 (48751) 72-251</a></div>
+              <div><a href="mailto:info@lazarevo.ru">info@lazarevo.ru</a></div>
+            </div>
+            <div class="item item-3">
+              <div><a href="#">Политика конфиденциальности</a></div>
+              <div><a href="#">Партнерам</a></div>
+            </div>
+          </div>
+          <div class="items">
+            <div class="item item-3">
+              <div><h5>ПРОДУКЦИЯ ПЕРЕРАБОТКИ</h5></div>
+              <div><a href="#">Колбасы варёные</a></div>
+              <div><a href="#">Молочная продукция</a></div>
+              <div><a href="#">Субпродукты</a></div>
+              <div><a href="#">Полуфабрикаты</a></div>
+              <div><a href="#">Сало, шпик</a></div>
+              <div><a href="#">Деликатесы</a></div>
+              <div><a href="#">Ветчины</a></div>
+              <div><a href="#">Сардельки</a></div>
+              <div><a href="#">Сосиски</a></div>
+              <div><a href="#">Колбасы полукопченые</a></div>
+              <div><a href="#">Колбасы варенокопченые</a></div>
+              <div><h5>СЕЛЬХОЗЯЙСТВЕННАЯ ПРОДУКЦИЯ</h5></div>
+              <div><a href="#">Зерно</a></div>
+              <div><a href="#">Картофель</a></div>
+              <div><a href="#">Полутуши</a></div>
+              <div><a href="#">Свиньи живым весом</a></div>
+            </div>
+            <div class="item item-3">
+              <div><h5>МАГАЗИНЫ / ТУЛА</h5></div>
+              <div><a href="#">Центральный рынок, пав. 30</a></div>
+              <div><a href="#">ул. Михеева, д.23</a></div>
+              <div><a href="#">ул. 9 Мая, д.5</a></div>
+              <div><a href="#">ул. Металлургов, д. 43б</a></div>
+              <div><a href="#">ул. Ложевая, д. 133</a></div>
+              <div><a href="#">ул. Кутузова. д.33</a></div>
+              <div><a href="#">ул. Максима Горького, д.12</a></div>
+              <div><a href="#">ул. Дмитрия Ульянова, д.2</a></div>
+              <div><a href="#">ул. Первомайская, д. 9</a></div>
+              <div><a href="#">ул. Марата, в районе д.2</a></div>
+              <div><a href="#">пр. Ленина, д.131-в</a></div>
+              <div><a href="#">ул. Пузакова, д.5</a></div>
+              <div><a href="#">пр. Ленина, д.30</a></div>
+              <div><a href="#">Калужское шоссе, д.2</a></div>
+              <div><a href="#">ул. Кауля, д.18</a></div>
+            </div>
+            <div class="item item-3">
+              <div><h5>МАГАЗИНЫ / ТУЛЬСКАЯ ОБЛ.</h5></div>
+              <div><a href="#">г. Щекино, ул. Емельянова, д.28</a></div>
+              <div><a href="#">г. Щекино, ул. Ленина, д.36 «Б»</a></div>
+              <div><a href="#">Щекинский р/н, село Лапотково</a></div>
+              <div><a href="#">п. Лазарево, ул. Тульская старая, д.10</a></div>
+              <div><a href="#">п. Теплое, ул. Фролова, д.104</a></div>
+              <div><a href="#">п. Заокский, ул. Ленина, д.43 «В»</a></div>
+              <div><a href="#">г. Новомосковск, ул. Московская д.23а</a></div>
+              <div><a href="#">п. Иншинский</a></div>
+              <div><a href="#">п. Молодежный, ул. Шоссейная, д.18</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="item item-40" style="padding: 0px;">
+          <div id="YMapsID2"></div>
+        </div>
+      </div>
+  </footer>
 </body>
 </html>
