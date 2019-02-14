@@ -6,125 +6,115 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/main.css">
   <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>
+			  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+			  crossorigin="anonymous"></script>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-  <script type="text/javascript" src="js/map.js"></script>
-	<style type="text/css">
-		#YMapsID {
-		    width: 100%;
-		    height: calc(100vh - 100px);
-        padding: 15px;
-        position: relative;
-		}
-
-    #YMapsID2 {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      margin: 0;
-		}
-
-	</style>
+  <script type="text/javascript" src="/js/map.js"></script>
   <title>ООО "ПХ "Лазаревское" - одно из крупнейших сельскохозяйственных предприятий Тульской области. Мясоперерабатывающий комбинат, животноводческий комплекс, племенная ферма, собственные сельхозплощади.</title>
 </head>
 <body>
-  <nav>
-    <ul class="is-left">
-      <li><a class="logo" href="#">Лазаревское</a></li>
-    </ul>
-    <ul class="is-right">
-      <li><a href="#">О нас</a></li>
-      <li><a href="#">Продукция</a></li>
-      <li><a href="#">Магазины</a></li>
-      <li><a href="#">Вакансии</a></li>
-      <li><a href="#">Видео</a></li>
-      <li><a href="#">События</a></li>
-      <li><a href="#">Отзывы</a></li>
-      <li><a href="#">Контакты</a></li>
-    </ul>
-  </nav>
+  <nav class="sticked">
+      <ul class="is-left">
+        <li><a class="logo" href="#">Лазаревское</a></li>
+      </ul>
+      <ul class="is-right navmenu">
+        <li><a href="#">О нас</a></li>
+        <li><a href="product.html">Продукция</a></li>
+        <li><a href="#">Магазины</a></li>
+        <li><a href="#">Вакансии</a></li>
+        <li><a href="#">Видео</a></li>
+        <li><a href="#">События</a></li>
+        <li><a href="#">Отзывы</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+      <div class="nav-burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
   <div class="banner">
     <video autoplay muted loop id="myVideo">
-      <source src="video/promo.mp4" type="video/mp4">
+      <source src="/video/promo.mp4" type="video/mp4">
     </video>
     <div class="darken"></div>
     <h1 class="title">Племенное хозяйство «Лазаревское»</h1>
     <p>одно из крупных сельскохозяйственных предприятий Тульской области</p>
-
   </div>
   <div class="container">
     <h2>Продукция переработки</h2>
-    <div class="items">
-      <div class="item item-4"><img src="img/product_1.jpg" />
+    <div class="columns">
+      <div class="column to-products is-one-quarter">
+        <div><img src="./img/product_1.jpg" /></div>
         <h4>Колбасы варёные</h4>
         <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
-      <div class="item item-4">
-        <img src="img/products/milk.jpg" />
+      <div class="column is-one-quarter">
+        <img src="./img/products/milk.jpg" />
         <h4>Молочная продукция</h4>
         <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
-      <div class="item item-4"><img src="img/products/subproduct.jpg" />
+      <div class="column is-one-quarter"><img src="./img/products/subproduct.jpg" />
         <h4>Субпродукты</h4>
         <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
-      <div class="item item-4"><img src="img/products/fabrikat.jpg" />
+      <div class="column is-one-quarter"><img src="./img/products/fabrikat.jpg" />
         <h4>Полуфабрикаты</h4>
         <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
     </div>
-    <div class="items">
-      <div class="item item-4"><img src="img/products/salo.jpg" />
+    <div class="columns">
+      <div class="column is-one-quarter"><img src="./img/products/salo.jpg" />
         <h4>Сало, шпик</h4>
         <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
-      <div class="item item-4"><img src="img/products/delikat.jpg" />
+      <div class="column is-one-quarter"><img src="./img/products/delikat.jpg" />
         <h4>Деликатесы</h4>
         <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
-      <div class="item item-4"><img src="img/products/vetchina.jpg" />
+      <div class="column is-one-quarter"><img src="./img/products/vetchina.jpg" />
         <h4>Ветчины</h4>
         <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
-      <div class="item item-4"><img src="img/products/sardel.jpg" />
+      <div class="column is-one-quarter"><img src="./img/products/sardel.jpg" />
         <h4>Сардельки</h4>
         <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
     </div>
-    <div class="items">
-      <div class="item item-4"><img src="img/products/sosi.jpg" />
+    <div class="columns">
+      <div class="column is-one-quarter"><img src="./img/products/sosi.jpg" />
         <h4>Сосиски</h4>
         <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
-      <div class="item item-4"><img src="img/products/krakow.jpg" />
+      <div class="column is-one-quarter"><img src="./img/products/krakow.jpg" />
         <h4>Колбасы полукопченые</h4>
         <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
-      <div class="item item-4"><img src="img/products/alpen.jpg" />
+      <div class="column is-one-quarter"><img src="./img/products/alpen.jpg" />
         <h4>Колбасы варенокопченые</h4>
         <a href="#" class="btn btn-default-secondary">В каталог</a>
       </div>
-      <div class="item item-4">
+      <div class="column is-one-quarter">
       </div>
     </div>
   </div>
   <div class="container">
-    <div class="items">
-      <div class="item item-4"><img src="img/pig.jpg" />
+      <h2>Продукция сельхозпереработки</h2>
+    <div class="columns">
+      <div class="column is-one-quarter"><img src="./img/pig.jpg" />
         <h4>Свиньи живым весом</h4>
         <a href="#" class="btn btn-default-secondary">Подробнее</a>
       </div>
-      <div class="item item-4"><img src="img/grain.jpg" />
+      <div class="column is-one-quarter"><img src="./img/grain.jpg" />
         <h4>Зерно</h4>
         <a href="#" class="btn btn-default-secondary">Подробнее</a>
       </div>
-      <div class="item item-4"><img src="img/potatoes.jpg" />
+      <div class="column is-one-quarter"><img src="./img/potatoes.jpg" />
         <h4>Картофель</h4>
         <a href="#" class="btn btn-default-secondary">Подробнее</a>
       </div>
-      <div class="item item-4"><img src="img/product_4.jpg" />
+      <div class="column is-one-quarter"><img src="./img/product_4.jpg" />
         <h4>Полутуши</h4>
         <a href="#" class="btn btn-default-secondary">Подробнее</a>
       </div>
@@ -132,8 +122,8 @@
   </div>
   <div class="container">
     <h2>События</h2>
-    <div class="items">
-      <div class="item item-5 news">
+    <div class="columns">
+      <div class="column is-one-quarter news">
         <span>03.12.2018</span>
         <h4>ООО "ПХ "Лазаревское" получило премию «Тульский бренд-2018»</h4>
         <p>
@@ -141,7 +131,7 @@
         </p>
         <a href="#" class="btn btn-default-secondary">Подробнее</a>
       </div>
-      <div class="item item-5 news">
+      <div class="column is-one-quarter news">
         <span>15.09.2018</span>
         <h4>Алексей Дюмин поздравил жителей Лазарева с юбилеем поселка</h4>
         <p>
@@ -149,7 +139,7 @@
         </p>
         <a href="#" class="btn btn-default-secondary">Подробнее</a>
       </div>
-      <div class="item item-5 news">
+      <div class="column is-one-quarter news">
         <span>21.08.2018</span>
         <h4>ООО «ПХ «Лазаревское» приняло участие в фестивале «СВОЁ»</h4>
         <p>
@@ -157,19 +147,11 @@
         </p>
         <a href="#" class="btn btn-default-secondary">Подробнее</a>
       </div>
-      <div class="item item-5 news">
+      <div class="column is-one-quarter news">
         <span>19.12.2017</span>
         <h4>Лауреатом регионального этапа конкурса «100 лучших товаров России» стало ООО "ПХ "Лазаревское"</h4>
         <p>
           ООО "ПХ "Лазаревское" включено в список предприятий лауреатов регионального этапа выставки-конкурса «100 лучших товаров России» 2017 г.
-        </p>
-        <a href="#" class="btn btn-default-secondary">Подробнее</a>
-      </div>
-      <div class="item item-5 news">
-        <span>04.12.2017</span>
-        <h4>ООО "ПХ "Лазаревское" получило премию «Тульский бренд-2018»</h4>
-        <p>
-          Голосование за «Тульский бренд - 2018» проводилось на городском портале Центр71, куда было прислано более 4000 заполненных...
         </p>
         <a href="#" class="btn btn-default-secondary">Подробнее</a>
       </div>
@@ -353,25 +335,23 @@
   </div>
   </div>
   <div class="container-full">
-    <div class="container">
-      <div class="items">
-        <div class="item item-2">
+    <div class="container not-padding">
+      <div class="columns">
+        <div class="column is-half is">
           <div class="image-bg"></div>
         </div>
-        <div class="item-2 full-item">
+        <div class="column is-half is">
           <div class="ps">
             <div>
               <h3>Племенное хозяйство Лазаревское</h3>
             </div>
-
             <div>
               <p>Наше убеждение в том, что сегодня получить натуральный экологический продукт возможно исключительно объединив совместные усилия растениеводов, животноводов, переработчиков и торговли. Ведь только так мы имеем возможность перерабатывать то, что производим, и у нас нет необходимости что-то, откуда-то завозить и чем-то заменять.</p>
-
               <p>Цель сотрудников предприятия в том, чтобы натуральный вкус и полезные свойства продуктов, доходили до потребителя в первозданном виде.</p>
             </div>
             <div>
-              <p class="author">Основатель предприятия</p>
-              <p class="author">Романовский Федор Григорьевич</p>
+              <p class="author"><i>Основатель предприятия</i></p>
+              <p class="author"><i>Романовский Федор Григорьевич</i></p>
             </div>
           </div>
         </div>
@@ -379,24 +359,24 @@
     </div>
   </div>
   <footer>
-      <div class="items">
-        <div class="item item-60">
-          <div class="items">
-            <div class="item item-3">
+      <div class="columns">
+        <div class="column is-three-fifths">
+          <div class="columns">
+            <div class="column is-one-third">
               <div>БИК 042007855</div>
               <div>к/с 30101810545250000855</div>
               <div>Код по ОКПО 00567209</div>
               <div>Код по ОКВЭД 01-46</div>
               <div>Код по ОКОНХ 21220</div>
             </div>
-            <div class="item item-3">
+            <div class="column is-one-third">
                 <div>ИНН 7118503160</div>
                 <div>КПП 711801001</div>
                 <div>ОГРН 1107154005210</div>
                 <div>р/с 40702810316450007637</div>
                 <div>Ф-л №3652 Банка ВТБ (ПАО) в г. Воронеж</div>
             </div>
-            <div class="item item-3">
+            <div class="column is-one-third">
               <div><a href="#">О нас</a></div>
               <div><a href="#">События</a></div>
               <div><a href="#">Вакансии</a></div>
@@ -404,24 +384,24 @@
               <div><a href="#">Контакты</a></div>
             </div>
           </div>
-          <div class="items">
-            <div class="item item-3">
+          <div class="columns">
+            <div class="column is-one-third">
               <div>Генеральный директор, действующий на основании устава:</div>
               <div><strong>Гильмуллин Александр Евгеньевич</strong></div>
             </div>
-            <div class="item item-3">
+            <div class="column is-one-third">
               <div>ООО "ПХ "Лазаревское"</div>
               <div>Россия, 301220, Тульская обл., п. Лазарево, ул. Луговая, д. 1</div>
               <div><a href="tel:+74875172251">+7 (48751) 72-251</a></div>
               <div><a href="mailto:info@lazarevo.ru">info@lazarevo.ru</a></div>
             </div>
-            <div class="item item-3">
+            <div class="column is-one-third">
               <div><a href="#">Политика конфиденциальности</a></div>
               <div><a href="#">Партнерам</a></div>
             </div>
           </div>
-          <div class="items">
-            <div class="item item-3">
+          <div class="columns">
+            <div class="column is-one-third">
               <div><h5>ПРОДУКЦИЯ ПЕРЕРАБОТКИ</h5></div>
               <div><a href="#">Колбасы варёные</a></div>
               <div><a href="#">Молочная продукция</a></div>
@@ -440,7 +420,7 @@
               <div><a href="#">Полутуши</a></div>
               <div><a href="#">Свиньи живым весом</a></div>
             </div>
-            <div class="item item-3">
+            <div class="column is-one-third">
               <div><h5>МАГАЗИНЫ / ТУЛА</h5></div>
               <div><a href="#">Центральный рынок, пав. 30</a></div>
               <div><a href="#">ул. Михеева, д.23</a></div>
@@ -458,7 +438,7 @@
               <div><a href="#">Калужское шоссе, д.2</a></div>
               <div><a href="#">ул. Кауля, д.18</a></div>
             </div>
-            <div class="item item-3">
+            <div class="column is-one-third">
               <div><h5>МАГАЗИНЫ / ТУЛЬСКАЯ ОБЛ.</h5></div>
               <div><a href="#">г. Щекино, ул. Емельянова, д.28</a></div>
               <div><a href="#">г. Щекино, ул. Ленина, д.36 «Б»</a></div>
@@ -472,10 +452,34 @@
             </div>
           </div>
         </div>
-        <div class="item item-40" style="padding: 0px;">
+        <div class="column is-two-fifths" style="padding: 0px;">
           <div id="YMapsID2"></div>
         </div>
       </div>
   </footer>
+  <script>
+    $(document).ready(function () {
+  $(".nav-burger").click(function () {
+    $('body').toggleClass("open");
+    if($(this).hasClass("is-active")) {
+      $(this).removeClass("is-active");
+      $(".navmenu").css("display", "none");
+      /*$(".navmenu").animate({
+        top: "-500px"
+      }, 500, function() {
+        $(".navmenu").css("display", "none");
+      });*/
+    } else {
+      $(this).addClass("is-active");
+      $(".navmenu").css("display", "flex");
+        /*$(".navmenu").css("display", "block").css("top", "500px").animate({
+          top: "59px"
+        }, 500, function() {
+          $('body').toggleClass("open");
+        });*/
+    };
+  });
+});
+  </script>
 </body>
 </html>
